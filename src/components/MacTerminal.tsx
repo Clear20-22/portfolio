@@ -23,6 +23,7 @@ const getInitialLines = (): TerminalLine[] => [
   { id: lineId++, type: "output", content: OWNER.role },
   { id: lineId++, type: "input", content: "❯ status" },
   { id: lineId++, type: "output", content: "Available for opportunities" },
+  { id: lineId++, type: "system", content: 'Tip: use "help" anytime for command list.' },
 ];
 
 export default function MacTerminal() {

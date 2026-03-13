@@ -3,21 +3,27 @@
 // ─────────────────────────────────────────────────────────────
 
 export const OWNER = {
-  name: "YOUR_NAME",
-  role: "CSE Engineer",
-  tagline: "Building elegant solutions at the intersection of code & design.",
-  email: "your@email.com",
+  name: "Jubayer Ahmed Sojib",
+  role: "Full-Stack Developer, Software Engineer",
+  tagline: "I build fast, scalable digital products that turn ideas into real-world impact.",
+  taglines: [
+    "I build fast, scalable digital products that turn ideas into real-world impact.",
+    "From concept to launch, I craft reliable software people love to use.",
+    "Engineering clean code and thoughtful UX for startups and growing teams.",
+    "I turn complex problems into simple, high-performance web experiences.",
+  ],
+  email: "jubayerahmedsojib23@gmail.com",
   resumeUrl: "#",
 } as const;
 
 export const SOCIAL_LINKS = [
-  { label: "GitHub", href: "https://github.com/YOUR_GITHUB", icon: "Github" },
+  { label: "GitHub", href: "https://github.com/Clear20-22", icon: "Github" },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/in/YOUR_LINKEDIN",
+    href: "https://www.linkedin.com/in/jubayer-ahmed-sojib-462938331/",
     icon: "Linkedin",
   },
-  { label: "Email", href: "mailto:your@email.com", icon: "Mail" },
+  { label: "Email", href: "mailto:jubayerahmedsojib23@gmail.com", icon: "Mail" },
 ] as const;
 
 // ─── Projects ────────────────────────────────────────────────

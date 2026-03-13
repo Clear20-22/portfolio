@@ -127,6 +127,14 @@ body {
   animation: gradient-shift 8s ease infinite;
 }
 
+/* ─── Hero Typography ───────────────────────────────────── */
+.hero-name {
+  font-size: clamp(2.85rem, 7.2vw, 6rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
 /* ─── Custom Cursor (hide default on pointer devices) ───── */
 @media (pointer: fine) {
   .cursor-none-custom,

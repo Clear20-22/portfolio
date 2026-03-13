@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
 import { OWNER, SOCIAL_LINKS } from "@/lib/constants";
@@ -29,6 +30,42 @@ const fadeUp = {
 };
 
 export default function Hero() {
+  const taglines = useMemo(
+    () => OWNER.taglines ?? [OWNER.tagline],
+    [],
+  );
+  const [taglineIndex, setTaglineIndex] = useState(0);
+  const [typedTagline, setTypedTagline] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const activeTagline = taglines[taglineIndex];
+    const atFullLength = typedTagline.length === activeTagline.length;
+    const atStart = typedTagline.length === 0;
+
+    if (!isDeleting && atFullLength) {
+      const holdTimer = setTimeout(() => setIsDeleting(true), 1600);
+      return () => clearTimeout(holdTimer);
+    }
+
+    if (isDeleting && atStart) {
+      setIsDeleting(false);
+      setTaglineIndex((prev) => (prev + 1) % taglines.length);
+      return;
+    }
+
+    const speed = isDeleting ? 20 : 40;
+    const timer = setTimeout(() => {
+      setTypedTagline((prev) =>
+        isDeleting
+          ? activeTagline.slice(0, Math.max(prev.length - 1, 0))
+          : activeTagline.slice(0, prev.length + 1),
+      );
+    }, speed);
+
+    return () => clearTimeout(timer);
+  }, [typedTagline, isDeleting, taglineIndex, taglines]);
+
   return (
     <section
       id="hero"
@@ -48,7 +85,7 @@ export default function Hero() {
           {/* Developer Name */}
           <motion.h1
             variants={fadeUp}
-            className="mb-4 bg-gradient-to-r from-white via-white/90 to-text-secondary bg-clip-text text-5xl font-bold tracking-tight text-transparent sm:text-7xl lg:text-8xl"
+            className="hero-name mb-4 bg-linear-to-r from-white via-white/95 to-accent-cyan/80 bg-clip-text font-bold text-transparent"
           >
             {OWNER.name}
           </motion.h1>
@@ -58,7 +95,11 @@ export default function Hero() {
             variants={fadeUp}
             className="mb-8 max-w-xl text-lg leading-relaxed text-text-secondary"
           >
-            {OWNER.tagline}
+            {typedTagline}
+            <span
+              className="ml-1 inline-block h-[1em] w-0.5 animate-blink bg-accent-cyan align-[-0.12em]"
+              aria-hidden="true"
+            />
           </motion.p>
 
           {/* Social Links */}
