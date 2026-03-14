@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { OWNER, TERMINAL_COMMANDS } from "@/lib/constants";
 import { fuzzyMatch } from "@/lib/utils";
@@ -147,10 +148,13 @@ export default function MacTerminal() {
             {/* Profile pic + name in title bar */}
             <div className="ml-2 flex flex-1 items-center justify-center gap-3 pr-6">
               <div className="relative h-10 w-10 overflow-hidden rounded-full border border-white/20 shadow-[0_0_12px_rgba(6,214,160,0.25)]">
-                <img
-                  src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=150&h=150"
+                <Image
+                  src="/profile_image.png"
                   alt="Profile"
-                  className="h-full w-full object-cover"
+                  fill
+                  className="object-cover"
+                  sizes="40px"
+                  priority
                 />
               </div>
               <span className="font-mono text-xs text-text-secondary">

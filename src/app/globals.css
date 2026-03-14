@@ -129,8 +129,8 @@ body {
 
 /* ─── Hero Typography ───────────────────────────────────── */
 .hero-name {
-  font-size: clamp(2.85rem, 7.2vw, 6rem);
-  line-height: 1.02;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.05;
   letter-spacing: -0.02em;
   text-wrap: balance;
 }

@@ -1,13 +1,15 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Binary, Trophy } from "lucide-react";
+import { ArrowDown, ArrowUp, Binary, Trophy } from "lucide-react";
 import {
   PLATFORM_PROFILES,
   PROBLEM_SOLVING_STATS,
 } from "@/lib/constants";
 
 export default function ProblemSolving() {
+  const [sortAsc, setSortAsc] = useState(false);
   return (
     <section
       id="problem-solving"
@@ -62,10 +64,20 @@ export default function ProblemSolving() {
                 <Binary size={18} />
               </div>
               <h3 className="text-lg font-semibold text-foreground">Platform Snapshot</h3>
+              <button
+                onClick={() => setSortAsc((prev) => !prev)}
+                title={sortAsc ? "Sort: Low → High" : "Sort: High → Low"}
+                className="ml-auto flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-xs text-text-secondary transition-colors hover:border-accent-cyan/40 hover:text-accent-cyan"
+              >
+                {sortAsc ? <ArrowUp size={13} /> : <ArrowDown size={13} />}
+                Solve Count
+              </button>
             </div>
 
             <div className="max-h-80 space-y-3 overflow-y-auto pr-1">
-              {PLATFORM_PROFILES.map((profile) => (
+              {[...PLATFORM_PROFILES]
+                .sort((a, b) => sortAsc ? a.solved - b.solved : b.solved - a.solved)
+                .map((profile) => (
                 <a
                   key={profile.platform}
                   href={profile.url}

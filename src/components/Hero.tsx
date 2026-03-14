@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
 import { OWNER, SOCIAL_LINKS } from "@/lib/constants";
@@ -82,6 +83,28 @@ export default function Hero() {
           initial="hidden"
           animate="show"
         >
+          {/* Profile Picture — centered above name */}
+          <motion.div variants={fadeUp} className="mb-6 self-center lg:self-start">
+            <div className="relative inline-block">
+              <motion.div
+                className="absolute -inset-0.75 rounded-full bg-linear-to-tr from-accent-cyan via-accent-purple to-accent-cyan opacity-80"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+              />
+              <div className="absolute -inset-0.75 rounded-full bg-linear-to-br from-accent-cyan/40 to-accent-purple/40 blur-sm" />
+              <div className="relative h-32 w-32 overflow-hidden rounded-full border-2 border-[#0a0a1a] sm:h-36 sm:w-36">
+                <Image
+                  src="/profile_image.png"
+                  alt={`${OWNER.name} profile photo`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 128px, 144px"
+                  priority
+                />
+              </div>
+            </div>
+          </motion.div>
+
           {/* Developer Name */}
           <motion.h1
             variants={fadeUp}

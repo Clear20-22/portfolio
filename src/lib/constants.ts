@@ -140,12 +140,12 @@ export interface PlatformProfile {
 export const PROBLEM_SOLVING_STATS: ProblemSolvingStat[] = [
   {
     label: "Total Problems Solved",
-    value: "620+",
+    value: "1500+",
     detail: "Across multiple online judges and competitive programming platforms.",
   },
   {
     label: "Contest Participation",
-    value: "45+",
+    value: "100+",
     detail: "Regular participation in rated contests and university coding battles.",
   },
   {
@@ -158,33 +158,33 @@ export const PROBLEM_SOLVING_STATS: ProblemSolvingStat[] = [
 export const PLATFORM_PROFILES: PlatformProfile[] = [
   {
     platform: "Codeforces",
-    solved: 220,
-    handle: "your_codeforces_handle",
-    url: "https://codeforces.com/",
+    solved: 500,
+    handle: "Clear23",
+    url: "https://codeforces.com/profile/Clear23",
   },
   {
     platform: "LeetCode",
-    solved: 170,
-    handle: "your_leetcode_handle",
-    url: "https://leetcode.com/",
+    solved: 500,
+    handle: "Sojib",
+    url: "https://leetcode.com/u/_Sojib_/",
   },
   {
     platform: "CodeChef",
-    solved: 140,
-    handle: "your_codechef_handle",
-    url: "https://www.codechef.com/",
+    solved: 200,
+    handle: "clear23",
+    url: "https://www.codechef.com/users/clear23",
   },
   {
     platform: "HackerRank",
-    solved: 95,
-    handle: "your_hackerrank_handle",
-    url: "https://www.hackerrank.com/",
+    solved: 150,
+    handle: "sojib1472004",
+    url: "https://www.hackerrank.com/profile/sojib1472004",
   },
   {
     platform: "Toph",
-    solved: 70,
-    handle: "your_toph_handle",
-    url: "https://toph.co/",
+    solved: 60,
+    handle: "Sojib23",
+    url: "https://toph.co/u/Sojib23",
   },
   {
     platform: "CSES",
@@ -194,9 +194,15 @@ export const PLATFORM_PROFILES: PlatformProfile[] = [
   },
   {
     platform: "AtCoder",
-    solved: 85,
-    handle: "your_atcoder_handle",
-    url: "https://atcoder.jp/",
+    solved: 100,
+    handle: "Sojib2004",
+    url: "https://atcoder.jp/users/Sojib2004",
+  },
+ {
+    platform: "Virtual Judge",
+    solved: 300,
+    handle: "Sojib2004",
+    url: "https://vjudge.net/user/Sojib2004",
   },
 ];
 
