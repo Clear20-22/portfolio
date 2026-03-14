@@ -33,7 +33,7 @@ function SkillBar({ skill, index }: { skill: Skill; index: number }) {
       </div>
       <div className="h-2 overflow-hidden rounded-full bg-white/5">
         <motion.div
-          className={`h-full rounded-full bg-gradient-to-r ${CATEGORY_COLORS[skill.category]}`}
+          className={`h-full rounded-full bg-linear-to-r ${CATEGORY_COLORS[skill.category]}`}
           initial={{ width: 0 }}
           whileInView={{ width: `${skill.level}%` }}
           viewport={{ once: true }}
@@ -75,20 +75,26 @@ export default function Skills() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="glass rounded-2xl p-6"
+                whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                className="glass group relative overflow-hidden rounded-2xl p-6 transition-all duration-300 hover:border-accent-cyan/20"
               >
+                {/* Gradient Glow — visible on hover */}
+                <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  <div className="absolute -inset-px rounded-2xl bg-linear-to-br from-accent-cyan/10 via-transparent to-accent-purple/10" />
+                </div>
+
                 {/* Category Header */}
-                <div className="mb-6 flex items-center gap-3">
+                <div className="relative z-10 mb-6 flex items-center gap-3">
                   <div
-                    className={`h-3 w-3 rounded-full bg-gradient-to-r ${CATEGORY_COLORS[cat]}`}
+                    className={`h-3 w-3 rounded-full bg-linear-to-r ${CATEGORY_COLORS[cat]}`}
                   />
-                  <h3 className="text-lg font-semibold text-foreground">
+                  <h3 className="text-lg font-semibold text-foreground transition-colors duration-300 group-hover:text-accent-cyan">
                     {categoryLabels[cat]}
                   </h3>
                 </div>
 
                 {/* Skill Bars */}
-                <div className="space-y-4">
+                <div className="relative z-10 space-y-4">
                   {catSkills.map((skill, i) => (
                     <SkillBar key={skill.name} skill={skill} index={i} />
                   ))}

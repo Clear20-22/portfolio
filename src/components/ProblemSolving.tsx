@@ -41,13 +41,18 @@ export default function ProblemSolving() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: index * 0.08 }}
-                className="glass rounded-2xl p-5"
+                whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                className="glass group relative overflow-hidden rounded-2xl p-5 transition-all duration-300 hover:border-accent-cyan/20"
               >
-                <p className="font-mono text-xs uppercase tracking-[0.16em] text-text-muted">
+                {/* Gradient Glow */}
+                <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  <div className="absolute -inset-px rounded-2xl bg-linear-to-br from-accent-cyan/10 via-transparent to-accent-purple/10" />
+                </div>
+                <p className="relative z-10 font-mono text-xs uppercase tracking-[0.16em] text-text-muted">
                   {item.label}
                 </p>
-                <p className="mt-2 text-2xl font-bold text-white">{item.value}</p>
-                <p className="mt-2 text-sm leading-relaxed text-text-secondary">{item.detail}</p>
+                <p className="relative z-10 mt-2 text-2xl font-bold text-white">{item.value}</p>
+                <p className="relative z-10 mt-2 text-sm leading-relaxed text-text-secondary">{item.detail}</p>
               </motion.article>
             ))}
           </div>
@@ -57,9 +62,15 @@ export default function ProblemSolving() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="glass rounded-2xl p-6"
+            whileHover={{ y: -4, transition: { duration: 0.2 } }}
+            className="glass group relative overflow-hidden rounded-2xl p-6 transition-all duration-300 hover:border-accent-cyan/20"
           >
-            <div className="mb-5 flex items-center gap-3">
+            {/* Gradient Glow */}
+            <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+              <div className="absolute -inset-px rounded-2xl bg-linear-to-br from-accent-cyan/10 via-transparent to-accent-purple/10" />
+            </div>
+
+            <div className="relative z-10 mb-5 flex items-center gap-3">
               <div className="rounded-xl bg-accent-purple/15 p-2 text-accent-purple">
                 <Binary size={18} />
               </div>
@@ -74,7 +85,7 @@ export default function ProblemSolving() {
               </button>
             </div>
 
-            <div className="max-h-80 space-y-3 overflow-y-auto pr-1">
+            <div className="relative z-10 max-h-80 space-y-3 overflow-y-auto pr-1">
               {[...PLATFORM_PROFILES]
                 .sort((a, b) => sortAsc ? a.solved - b.solved : b.solved - a.solved)
                 .map((profile) => (

@@ -31,9 +31,15 @@ export default function Achievements() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="glass group rounded-2xl p-6"
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
+              className="glass group relative overflow-hidden rounded-2xl p-6 transition-all duration-300 hover:border-accent-cyan/20"
             >
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+              {/* Gradient Glow — visible on hover */}
+              <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                <div className="absolute -inset-px rounded-2xl bg-linear-to-br from-accent-cyan/10 via-transparent to-accent-purple/10" />
+              </div>
+
+              <div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div>
                   <div className="mb-2 flex items-center gap-2 text-accent-cyan">
                     <Award size={16} />
@@ -41,7 +47,7 @@ export default function Achievements() {
                       {item.period}
                     </p>
                   </div>
-                  <h3 className="text-xl font-semibold text-white">{item.title}</h3>
+                <h3 className="text-xl font-semibold text-white transition-colors duration-300 group-hover:text-accent-cyan">{item.title}</h3>
                   <p className="mt-2 max-w-3xl text-sm leading-relaxed text-text-secondary">
                     {item.description}
                   </p>
