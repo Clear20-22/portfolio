@@ -17,7 +17,7 @@ const jetbrains = JetBrains_Mono({
 
 /* ─── SEO Metadata ───────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "YOUR_NAME — CSE Engineer Portfolio",
+  title: "Jubayer Ahmed Sojib - Portfolio",
   description:
     "Interactive developer portfolio showcasing modern UI engineering, creative coding, and full-stack projects. Built with Next.js, TypeScript, and Framer Motion.",
   keywords: [
@@ -30,18 +30,18 @@ export const metadata: Metadata = {
     "creative coding",
     "full stack",
   ],
-  authors: [{ name: "YOUR_NAME" }],
+  authors: [{ name: "Jubayer Ahmed Sojib" }],
   openGraph: {
     type: "website",
-    title: "YOUR_NAME — CSE Engineer Portfolio",
+    title: "Jubayer Ahmed Sojib - Portfolio",
     description:
       "Interactive developer portfolio with generative graphics, glassmorphism UI, and a living-system feel.",
-    siteName: "YOUR_NAME Portfolio",
+    siteName: "Jubayer Ahmed Sojib Portfolio",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "YOUR_NAME — CSE Engineer Portfolio",
+    title: "Jubayer Ahmed Sojib - Portfolio",
     description:
       "Interactive developer portfolio with generative graphics and modern engineering.",
   },
