@@ -30,8 +30,48 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# env files (keep templates only)
+.env
+.env.*
+!.env.example
+!.env*.example
+
+# secrets and credentials
+*.key
+*.crt
+*.cer
+*.csr
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.asc
+*.secret
+*.secrets
+secrets/
+.secrets/
+
+# cloud and service credentials
+.aws/
+.azure/
+.gcp/
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+terraform.tfvars.json
+
+# local auth and token files
+.npmrc
+.yarnrc
+.pypirc
+.netrc
+
+# common service-account exports
+service-account.json
+serviceAccount*.json
+*-service-account.json
+firebase-adminsdk*.json
 
 # vercel
 .vercel

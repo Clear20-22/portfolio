@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a [Next.js](https://nextjs.org) portfolio project with an interactive UI, project showcase, and a contact form that forwards submissions to your inbox.
 
 ## Getting Started
 
@@ -16,9 +16,27 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contact Form Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The contact section submits to `/api/contact` and forwards messages to your email using SMTP.
+
+1. Copy `.env.example` to `.env.local`.
+2. Fill in your SMTP credentials.
+3. Set `CONTACT_TO_EMAIL` to the inbox where you want submissions delivered.
+
+Example for Gmail:
+
+```bash
+cp .env.example .env.local
+```
+
+Use an app password instead of your normal Gmail password if you are using Gmail SMTP.
+
+## Notes
+
+- `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, and `SMTP_PASS` are required.
+- `CONTACT_FROM_EMAIL` should usually match the authenticated SMTP account.
+- If `CONTACT_TO_EMAIL` is omitted, the app falls back to the email defined in `src/lib/constants.ts`.
 
 ## Learn More
 

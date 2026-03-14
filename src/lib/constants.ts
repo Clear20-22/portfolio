@@ -122,6 +122,113 @@ export const SKILLS: Skill[] = [
   { name: "Machine Learning", level: 74, category: "concept" },
 ];
 
+// ─── Problem Solving ────────────────────────────────────────
+
+export interface ProblemSolvingStat {
+  label: string;
+  value: string;
+  detail: string;
+}
+
+export interface PlatformProfile {
+  platform: string;
+  solved: number;
+  handle: string;
+  url: string;
+}
+
+export const PROBLEM_SOLVING_STATS: ProblemSolvingStat[] = [
+  {
+    label: "Total Problems Solved",
+    value: "620+",
+    detail: "Across multiple online judges and competitive programming platforms.",
+  },
+  {
+    label: "Contest Participation",
+    value: "45+",
+    detail: "Regular participation in rated contests and university coding battles.",
+  },
+  {
+    label: "Strong Areas",
+    value: "DSA + Graph",
+    detail: "Confident with dynamic programming, graph theory, and greedy strategies.",
+  },
+];
+
+export const PLATFORM_PROFILES: PlatformProfile[] = [
+  {
+    platform: "Codeforces",
+    solved: 220,
+    handle: "your_codeforces_handle",
+    url: "https://codeforces.com/",
+  },
+  {
+    platform: "LeetCode",
+    solved: 170,
+    handle: "your_leetcode_handle",
+    url: "https://leetcode.com/",
+  },
+  {
+    platform: "CodeChef",
+    solved: 140,
+    handle: "your_codechef_handle",
+    url: "https://www.codechef.com/",
+  },
+  {
+    platform: "HackerRank",
+    solved: 95,
+    handle: "your_hackerrank_handle",
+    url: "https://www.hackerrank.com/",
+  },
+  {
+    platform: "Toph",
+    solved: 70,
+    handle: "your_toph_handle",
+    url: "https://toph.co/",
+  },
+  {
+    platform: "CSES",
+    solved: 160,
+    handle: "your_cses_profile",
+    url: "https://cses.fi/",
+  },
+  {
+    platform: "AtCoder",
+    solved: 85,
+    handle: "your_atcoder_handle",
+    url: "https://atcoder.jp/",
+  },
+];
+
+// ─── Achievements ───────────────────────────────────────────
+
+export interface Achievement {
+  title: string;
+  period: string;
+  description: string;
+}
+
+export const ACHIEVEMENTS: Achievement[] = [
+  {
+    title: "Top Performances in University Programming Contests",
+    period: "2023 - Present",
+    description:
+      "Secured strong positions in multiple intra-university and inter-university contests through consistent algorithmic practice.",
+  },
+  {
+    title: "Built and Shipped Multiple Full-Stack Projects",
+    period: "2022 - Present",
+    description:
+      "Designed and deployed production-ready projects with modern frontend, backend APIs, and scalable architecture patterns.",
+  },
+  {
+    title: "Active Open-Source and Peer Collaboration",
+    period: "Ongoing",
+    description:
+      "Contributed to team projects, code reviews, and technical mentoring within student and developer communities.",
+  },
+];
+
 // ─── Terminal Commands ───────────────────────────────────────
 
 export const TERMINAL_COMMANDS: Record<string, string[]> = {
@@ -131,6 +238,8 @@ export const TERMINAL_COMMANDS: Record<string, string[]> = {
     "  about     — who am I?",
     "  projects  — list featured projects",
     "  skills    — show skill overview",
+    "  problem   — show problem solving snapshot",
+    "  achievements — show key achievements",
     "  contact   — how to reach me",
     "  resume    — open resume link",
     "  clear     — clear terminal",
@@ -153,6 +262,19 @@ export const TERMINAL_COMMANDS: Record<string, string[]> = {
     ...SKILLS.filter((s) => s.level >= 80).map(
       (s) => `  ${s.name.padEnd(18)} ${"█".repeat(Math.round(s.level / 10))}${"░".repeat(10 - Math.round(s.level / 10))} ${s.level}%`,
     ),
+  ],
+  problem: [
+    "Problem Solving Experience:",
+    ...PROBLEM_SOLVING_STATS.map((item) => `  ${item.label.padEnd(24)} ${item.value}`),
+    "",
+    "Platforms:",
+    ...PLATFORM_PROFILES.map(
+      (p) => `  ${p.platform.padEnd(16)} ${`${p.solved}+`.padEnd(8)} (${p.handle})`,
+    ),
+  ],
+  achievements: [
+    "Achievements:",
+    ...ACHIEVEMENTS.map((a, i) => `  ${i + 1}. ${a.title} (${a.period})`),
   ],
   contact: [
     "Get in touch:",
