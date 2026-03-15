@@ -12,6 +12,7 @@ export const OWNER = {
     "Engineering clean code and thoughtful UX for startups and growing teams.",
     "I turn complex problems into simple, high-performance web experiences.",
   ],
+  education: "BSc in Computer Science and Engineering, University of Dhaka",
   email: "jubayerahmedsojib23@gmail.com",
   resumeUrl: "#",
 } as const;
@@ -349,6 +350,7 @@ export const TERMINAL_COMMANDS: Record<string, string[]> = {
   about: [
     `> ${OWNER.name}`,
     `  ${OWNER.role}`,
+    `  ${OWNER.education}`,
     "",
     "  " + OWNER.tagline,
     "",
