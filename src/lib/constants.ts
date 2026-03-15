@@ -284,8 +284,8 @@ export const PLATFORM_PROFILES: PlatformProfile[] = [
   {
     platform: "CSES",
     solved: 160,
-    handle: "your_cses_profile",
-    url: "https://cses.fi/",
+    handle: "sojib",
+    url: "https://cses.fi/user/233698",
   },
   {
     platform: "AtCoder",
