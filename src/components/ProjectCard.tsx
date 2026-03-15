@@ -17,12 +17,12 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ y: -4, transition: { duration: 0.2 } }}
-      className="glass group relative flex flex-col justify-between overflow-hidden rounded-2xl p-6 transition-all duration-300 hover:border-accent-cyan/20"
+      className="glass group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl p-6 transition-all duration-300 hover:border-accent-cyan/20"
       data-hover
     >
       {/* Gradient Glow — visible on hover */}
       <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-        <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-accent-cyan/10 via-transparent to-accent-purple/10" />
+        <div className="absolute -inset-px rounded-2xl bg-linear-to-br from-accent-cyan/10 via-transparent to-accent-purple/10" />
       </div>
 
       <div className="relative z-10">

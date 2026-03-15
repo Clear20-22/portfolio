@@ -39,53 +39,148 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
-    title: "Neural Style Transfer",
+    title: "Cognify AI Powered Learning Platform",
     description:
-      "Real-time artistic style transfer using deep convolutional networks with optimized inference pipeline.",
-    tech: ["Python", "PyTorch", "FastAPI", "Docker"],
-    github: "https://github.com/YOUR_GITHUB/neural-style",
-    live: "https://neural-style.vercel.app",
+      "AI-powered learning platform with personalized content generation using Google Gemini, interactive chat tutoring, adaptive exam generation, notes management, and learning progress tracking.",
+    tech: [
+      "Python",
+      "FastAPI",
+      "React",
+      "Vite",
+      "TailwindCSS",
+      "Supabase",
+      "Google Gemini AI",
+      "Pydantic",
+      "Uvicorn",
+    ],
+    github:
+      "https://github.com/Clear20-22/Cognify-AI-Powered-Learning-Platform",
+    live: "https://cognify-ai-powered-learning-platfor.vercel.app",
     span: "featured",
   },
   {
-    title: "DevFlow CLI",
+    title: "StockHub - Warehouse Management System",
     description:
-      "Git workflow automation tool that streamlines branch management and CI/CD pipelines.",
-    tech: ["Rust", "Tokio", "GitHub API"],
-    github: "https://github.com/YOUR_GITHUB/devflow",
-    span: "col2",
+      "Complete warehouse management system built with React, FastAPI, and SQLite featuring JWT authentication, role-based access (Admin/Employee/Customer), and comprehensive CRUD operations for users, goods, branches, and assignments.",
+    tech: [
+      "React",
+      "Vite",
+      "FastAPI",
+      "SQLite",
+      "SQLAlchemy",
+      "JWT",
+      "Passlib",
+      "Pydantic",
+      "Axios",
+      "React Router",
+      "TailwindCSS",
+      "Framer Motion",
+      "Python",
+      "JavaScript",
+    ],
+    github: "https://github.com/Clear20-22/StockHub",
+    live: "https://stock-hub-eight.vercel.app/",
+    span: "featured",
   },
   {
-    title: "Quantum Circuit Sim",
-    description:
-      "Browser-based quantum computing simulator with drag-and-drop gate composition.",
-    tech: ["TypeScript", "React", "WebGL", "Qiskit"],
-    github: "https://github.com/YOUR_GITHUB/quantum-sim",
-    live: "https://quantum-sim.vercel.app",
-  },
-  {
-    title: "Mesh Network Chat",
-    description:
-      "Decentralised peer-to-peer messaging using WebRTC with end-to-end encryption.",
-    tech: ["Go", "WebRTC", "Protobuf", "React"],
-    github: "https://github.com/YOUR_GITHUB/mesh-chat",
-  },
-  {
-    title: "CloudWatch Dashboard",
-    description:
-      "Real-time infrastructure monitoring dashboard with anomaly detection alerts.",
-    tech: ["Next.js", "D3.js", "AWS SDK", "Prisma"],
-    github: "https://github.com/YOUR_GITHUB/cloudwatch",
-    live: "https://cloudwatch-dash.vercel.app",
-    span: "col2",
-  },
-  {
-    title: "LLM Playground",
-    description:
-      "Interactive sandbox for testing and comparing LLM outputs, with prompt versioning.",
-    tech: ["TypeScript", "Next.js", "OpenAI API", "Redis"],
-    github: "https://github.com/YOUR_GITHUB/llm-playground",
-  },
+  title: "VivaMed - Medical Education & Management Platform",
+  description:
+    "A comprehensive medical ecosystem featuring specialized portals for students, doctors, and administrators. It streamlines clinical learning with interactive dashboards, patient management tools, and a gamified achievement system, all wrapped in a modern, responsive interface.",
+  tech: [
+    "React",
+    "TypeScript",
+    "Java",
+    "Vite",
+    "Tailwind CSS",
+    "Framer Motion",
+    "shadcn/ui",
+    "Lucide React",
+    "React Router",
+    "Axios",
+    "Node.js",
+    "PostCSS",
+  ],
+  github: "https://github.com/your-username/VivaMed",
+  live: "https://vivamed-demo.vercel.app/", // Placeholder: replace with your actual deployment link
+  span: "featured",
+},
+{
+  title: "TypeForge - Interactive Typing Mastery Platform",
+  description:
+    "An interactive typing tutor designed to bridge the gap between learning and gamification. It features a curriculum of structured lessons, a real-time practice engine with an on-screen visual keyboard helper, and an arcade-style game mode to improve muscle memory and typing speed.",
+  tech: [
+    "React",
+    "Vite",
+    "Tailwind CSS",
+    "React Router",
+    "PostCSS",
+    "JavaScript",
+    "ESLint",
+  ],
+  github: "https://github.com/Clear20-22/TypeForge",
+  live: "https://type-forge-one.vercel.app/",
+  span: "featured",
+},
+{
+  title: "DrugScript - Healthcare Management System",
+  description:
+    "A revolutionary mobile healthcare ecosystem that digitizes the medical journey. It features QR-based prescription management, an on-demand medicine delivery marketplace, and a real-time emergency ambulance tracking system, all supported by a community health forum and expert consultation modules.",
+  tech: [
+    "Flutter",
+    "FastAPI",
+    "Firebase",
+    "Dart",
+    "Python",
+    "PostgreSQL",
+    "GetX",
+    "Google Maps SDK",
+    "JWT",
+    "Docker",
+    "Lottie",
+    "REST API",
+  ],
+  github: "https://github.com/Clear20-22/DrugScript",
+  live: "https://drugscript-app.vercel.app/", // Replace with your actual link or Play Store URL
+  span: "featured",
+},
+{
+  title: "Scribble V2 - Real-time Multiplayer Socket Game",
+  description:
+    "A high-performance multiplayer drawing and guessing game built with Java 17 and JavaFX. It features a custom TCP-based messaging protocol, real-time stroke synchronization with late-joiner history, and a dedicated admin dashboard for monitoring live server metrics like RTT, throughput, and packet fan-out.",
+  tech: [
+    "Java 17",
+    "JavaFX",
+    "TCP Sockets",
+    "Multi-threading",
+    "Gradle",
+    "Concurrent Data Structures",
+    "Object Serialization",
+    "Exponential Backoff",
+  ],
+  github: "https://github.com/Mim1726/scribble",
+  live: "https://github.com/Mim1726/scribble/releases", // Usually desktop apps link to releases or a demo video
+  span: "featured",
+},
+{
+  title: "Tuition Helper - Offline-First Management App",
+  description:
+    "An architecture-focused Flutter application designed for tutors to manage students, schedules, and payments. Built with an offline-first philosophy using SQLite and Hive, it features a highly responsive design that adapts seamlessly across Mobile, Tablet, and Web platforms using the Provider pattern.",
+  tech: [
+    "Flutter",
+    "Dart",
+    "Provider",
+    "SQLite",
+    "Hive",
+    "Firebase",
+    "Clean Architecture",
+    "Responsive Design",
+    "Google Maps API",
+    "Local Notifications",
+  ],
+  github: "https://github.com/Clear20-22/Tuition-Helper",
+  live: "https://tuition-helper-web.vercel.app/", // Replace with your actual deployment
+  span: "featured",
+},
 ];
 
 // ─── Skills ──────────────────────────────────────────────────

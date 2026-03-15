@@ -24,21 +24,10 @@ export default function BentoGrid() {
           </h2>
         </motion.div>
 
-        {/* Bento Grid */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Uniform project grid for clean row/column alignment */}
+        <div className="grid auto-rows-fr grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
           {PROJECTS.map((project, index) => (
-            <div
-              key={project.title}
-              className={
-                project.span === "featured"
-                  ? "sm:col-span-2 lg:col-span-2"
-                  : project.span === "col2"
-                    ? "sm:col-span-2 lg:col-span-1"
-                    : ""
-              }
-            >
-              <ProjectCard project={project} index={index} />
-            </div>
+            <ProjectCard key={project.title} project={project} index={index} />
           ))}
         </div>
       </div>
